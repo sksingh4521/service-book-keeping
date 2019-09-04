@@ -1,17 +1,32 @@
 package com.assignment.demo.model.entity;
 
+import javax.persistence.*;
+import java.time.Year;
 
-public class Comics extends Tag {
-
-    private Tag tag;
+@Entity
+@IdClass(CompositeKey.class)
+public class Comics{
+    @Id
+    private String title;
+    @Id
+    private Year year;
     private String hero;
 
-    public Tag getTag() {
-        return tag;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setTag(Tag tag) {
-        this.tag = tag;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Year getYear() {
+        return year;
+    }
+
+    public void setYear(Year year) {
+        this.year = year;
     }
 
     public String getHero() {

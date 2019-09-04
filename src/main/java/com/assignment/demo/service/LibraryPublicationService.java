@@ -2,9 +2,10 @@ package com.assignment.demo.service;
 
 import com.assignment.demo.model.entity.Publication;
 import com.assignment.demo.respository.PublicationRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class LibraryPublicationService {
 
     private PublicationRepository publicationRepository;

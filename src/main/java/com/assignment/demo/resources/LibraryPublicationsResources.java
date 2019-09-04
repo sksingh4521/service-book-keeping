@@ -8,11 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.assignment.demo.resources.UrlConstants.URI;
-import static com.assignment.demo.resources.UrlConstants.VERSIONED_API;
+import static com.assignment.demo.resources.UrlConstants.*;
 
 @RestController
-@RequestMapping(URI)
+@RequestMapping(URI+PUBLISHER)
 public class LibraryPublicationsResources {
 
     private LibraryPublicationService publicationService;

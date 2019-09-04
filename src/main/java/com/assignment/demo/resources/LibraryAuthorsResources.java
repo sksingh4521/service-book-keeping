@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.assignment.demo.resources.UrlConstants.AUTHOR;
 import static com.assignment.demo.resources.UrlConstants.URI;
 
 @RestController
-@RequestMapping(URI)
+@RequestMapping(URI+AUTHOR)
 public class LibraryAuthorsResources {
 
     private LibraryAuthorService libraryAuthorService;

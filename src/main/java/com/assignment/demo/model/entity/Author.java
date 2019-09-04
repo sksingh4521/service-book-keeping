@@ -1,23 +1,28 @@
 package com.assignment.demo.model.entity;
 
-import javax.persistence.*;
+import com.assignment.demo.audit.AuditLibraryKeeping;
 
-public class Author {
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+public class Author extends AuditLibraryKeeping {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "authId")
     private Long Id;
     @ManyToMany
-    private Publication publication;
+    private List<Publication> publicationList =  new ArrayList<Publication>();
     private String name;
 
-    public Publication getPublication() {
-        return publication;
+    public List<Publication> getPublicationList() {
+        return publicationList;
     }
 
-    public void setPublication(Publication publication) {
-        this.publication = publication;
+    public void setPublicationList(List<Publication> publicationList) {
+        this.publicationList = publicationList;
     }
 
     public Long getId() {

@@ -6,7 +6,8 @@ public class UrlConstants {
     public static final String VERSIONED_API = API + VERSION;
     public static final String LIBRARY = "/library";
     public static final String URI = LIBRARY + VERSIONED_API;
-
+    public static final String AUTHOR="/author";
+    public static final String PUBLISHER="/publisher";
     private UrlConstants() {
     }
 
