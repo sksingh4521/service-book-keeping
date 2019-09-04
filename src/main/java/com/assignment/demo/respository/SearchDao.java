@@ -40,27 +40,30 @@ public class SearchDao  {
 
     private List<Publication> searchPublisher(List<SearchParameter> params) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Book> bookQuery = builder.createQuery(Book.class);
-        CriteriaQuery<Magazine> magazineQuery = builder.createQuery(Magazine.class);
-        CriteriaQuery<Comics> comicsQuery = builder.createQuery(Comics.class);
+
+        CriteriaQuery<Publication> query = builder.createQuery(Publication.class);
+
+//        CriteriaQuery<Book> bookQuery = builder.createQuery(Book.class);
+//        CriteriaQuery<Magazine> magazineQuery = builder.createQuery(Magazine.class);
+//        CriteriaQuery<Comics> comicsQuery = builder.createQuery(Comics.class);
 
 
 
-        Root bookRoot = bookQuery.from(Book.class);
+        Root r = query.from(Publication.class);
 
-        Root magazineRoot = bookQuery.from(Magazine.class);
-
-        Root comicsRoot = bookQuery.from(Comics.class);
+//        Root magazineRoot = bookQuery.from(Magazine.class);
+//
+//        Root comicsRoot = bookQuery.from(Comics.class);
 
         Predicate predicate = builder.conjunction();
 
         PublicationSearchQueryCriteriaConsumer searchPublisher =
-                new PublicationSearchQueryCriteriaConsumer(predicate, builder, bookRoot);
+                new PublicationSearchQueryCriteriaConsumer(predicate, builder, r);
         params.stream().forEach(searchPublisher);
         predicate = searchPublisher.getPredicate();
-        bookQuery.where(predicate);
+        query.where(predicate);
 
-        List<Publication> result = entityManager.createQuery(bookQuery).getResultList();
+        List<Publication> result = entityManager.createQuery(query).getResultList();
         return result;
     }
 

@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.Year;
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.assignment.demo.resources.UrlConstants.PUBLISHER;
@@ -65,6 +66,8 @@ public class LibraryPublicationsResources {
     @GetMapping(value = "/search")
     public ResponseEntity<List<Publication>> getPublicationByGLobalSearch(@RequestBody List<String> list) {
         logger.info("custom search");
+        ArrayList arrayList = new ArrayList();
+
         return ResponseEntity.ok(publicationService.getPublicationByGLobalSearch(list));
 
     }

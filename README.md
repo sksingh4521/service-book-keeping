@@ -7,9 +7,13 @@ Create RESTful API to search and manage magazines, comics, books and their autho
 •Publication name is not unique 
 
 
-Domain Model Author 
+Domain Model
+
+Author
 • name 
-Publication Magazine
+
+Publication
+Magazine
  • title
  • year 
  • type (Printed, On-line) 
@@ -22,7 +26,8 @@ Publication Magazine
  • title
  • year
  • genre (Drama, Novel, Detective)
- Use Cases 
+
+ Use Cases
  • CRUD for Authors
  • CRUD for publications
  • Search publications by year and author 
