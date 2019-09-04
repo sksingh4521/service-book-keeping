@@ -1,5 +1,6 @@
 package com.assignment.demo.model.entity;
 
+
 public class Book {
     private Tag tag;
 
@@ -11,7 +12,7 @@ public class Book {
         this.tag = tag;
     }
 
-    public enum Genere{
+    public enum Genere {
         Drama,
         Novel,
         Detective

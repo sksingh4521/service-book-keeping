@@ -1,10 +1,11 @@
 package com.assignment.demo.model.entity;
 
 import java.time.Year;
-import java.util.Date;
 
 public class Tag {
+
     private String title;
+    private Year year;
 
     public String getTitle() {
         return title;
@@ -14,13 +15,11 @@ public class Tag {
         this.title = title;
     }
 
-    public Year getDate() {
-        return date;
+    public Year getYear() {
+        return year;
     }
 
-    public void setDate(Year date) {
-        this.date = date;
+    public void setYear(Year year) {
+        this.year = year;
     }
-
-    private Year date;
 }

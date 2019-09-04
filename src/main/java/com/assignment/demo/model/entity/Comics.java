@@ -1,7 +1,10 @@
 package com.assignment.demo.model.entity;
 
-public class Comics {
+
+public class Comics extends Tag {
+
     private Tag tag;
+    private String hero;
 
     public Tag getTag() {
         return tag;
@@ -18,6 +21,4 @@ public class Comics {
     public void setHero(String hero) {
         this.hero = hero;
     }
-
-    private String hero;
 }

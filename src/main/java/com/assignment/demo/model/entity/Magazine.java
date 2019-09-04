@@ -1,7 +1,8 @@
 package com.assignment.demo.model.entity;
 
+
 public class Magazine {
-private Tag tag;
+    private Tag tag;
 
     public Tag getTag() {
         return tag;
@@ -11,8 +12,8 @@ private Tag tag;
         this.tag = tag;
     }
 
-    public enum Type{
-    Printed,Online;
-}
+    public enum Type {
+        Printed, Online;
+    }
 
 }

@@ -1,17 +1,31 @@
 package com.assignment.demo.service;
 
 import com.assignment.demo.model.entity.Publication;
+import com.assignment.demo.respository.PublicationRepository;
+
+import java.util.List;
 
 public class LibraryPublicationService {
-    public void delete(String pub) {
+
+    private PublicationRepository publicationRepository;
+
+    public LibraryPublicationService(PublicationRepository publicationRepository) {
+        this.publicationRepository = publicationRepository;
     }
 
-    public void list() {
+    public void delete(Long pubId) {
+        publicationRepository.deleteById(pubId);
     }
 
-    public void update(Publication publication) {
+    public List<Publication> list() {
+        return publicationRepository.findAll();
     }
 
-    public void create(Publication publication) {
+    public Publication update(Publication publication) {
+        return publicationRepository.save(publication);
+    }
+
+    public Publication create(Publication publication) {
+        return publicationRepository.save(publication);
     }
 }
