@@ -3,11 +3,14 @@ package com.assignment.demo.resources;
 
 import com.assignment.demo.model.entity.Publication;
 import com.assignment.demo.service.LibraryPublicationService;
+import com.assignment.demo.respository.SearchParameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.Year;
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.assignment.demo.resources.UrlConstants.PUBLISHER;
@@ -55,7 +58,20 @@ public class LibraryPublicationsResources {
     public String delete(@PathVariable Long pub) {
         logger.info("deleting publication");
         publicationService.delete(pub);
-        return null;
+        return "Deleted";
+
     }
+
+
+    @GetMapping(value = "/search")
+    public ResponseEntity<List<Publication>> getPublicationByGLobalSearch(@RequestBody List<String> list) {
+        logger.info("custom search");
+        ArrayList arrayList = new ArrayList();
+
+        return ResponseEntity.ok(publicationService.getPublicationByGLobalSearch(list));
+
+    }
+
+
 
 }
