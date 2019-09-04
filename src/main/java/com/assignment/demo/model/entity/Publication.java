@@ -13,6 +13,17 @@ public class Publication {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "pId")
     private Long pubId;
+
+    private String pubName;
+
+    public String getPubName() {
+        return pubName;
+    }
+
+    public void setPubName(String pubName) {
+        this.pubName = pubName;
+    }
+
     @OneToOne(cascade=CascadeType.ALL)
     private Magazine magazine;
     @OneToOne(cascade=CascadeType.ALL)

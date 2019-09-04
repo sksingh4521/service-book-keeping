@@ -28,7 +28,10 @@ Publication Magazine
  • Search publications by year and author 
 	o Example: find all books written by Stephen King in 1990 
 	• Search publications by author and any arbitrary attribute
-	o Example: find all novels by Stephen King o Example: find all comics with Spider-man Technical Requirements
+	o Example: find all novels by Stephen King
+	o Example: find all comics with Spider-man
+
+	 Technical Requirements
 • Any framework, ORM and library may be used 
 • Relational database must be used to persist data
 • No security required 
