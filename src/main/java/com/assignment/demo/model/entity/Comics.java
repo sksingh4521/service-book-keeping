@@ -1,11 +1,13 @@
 package com.assignment.demo.model.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import java.time.Year;
 
 @Entity
 @IdClass(CompositeKey.class)
-public class Comics{
+public class Comics {
     @Id
     private String title;
     @Id

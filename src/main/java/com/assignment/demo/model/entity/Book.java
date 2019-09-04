@@ -2,15 +2,16 @@ package com.assignment.demo.model.entity;
 
 import javax.persistence.*;
 import java.time.Year;
+
 @Entity
 @IdClass(CompositeKey.class)
-public class Book{
+public class Book {
     @Id
     private String title;
     @Id
     private Year year;
     @Enumerated(EnumType.STRING)
-    private Genere  genere;
+    private Genere genere;
 
     public Year getYear() {
         return year;

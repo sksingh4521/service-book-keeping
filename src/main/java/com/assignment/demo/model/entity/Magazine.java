@@ -38,9 +38,6 @@ public class Magazine {
     }
 
 
-
-
-
     public enum Type {
         Printed, Online;
     }

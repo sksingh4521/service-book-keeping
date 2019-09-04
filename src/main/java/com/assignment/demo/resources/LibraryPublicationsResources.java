@@ -3,16 +3,21 @@ package com.assignment.demo.resources;
 
 import com.assignment.demo.model.entity.Publication;
 import com.assignment.demo.service.LibraryPublicationService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.assignment.demo.resources.UrlConstants.*;
+import static com.assignment.demo.resources.UrlConstants.PUBLISHER;
+import static com.assignment.demo.resources.UrlConstants.URI;
 
 @RestController
-@RequestMapping(URI+PUBLISHER)
+@RequestMapping(URI + PUBLISHER)
 public class LibraryPublicationsResources {
+
+    private static final Logger logger = LoggerFactory.getLogger(LibraryAuthorsResources.class);
 
     private LibraryPublicationService publicationService;
     private Publication publication;
@@ -25,12 +30,14 @@ public class LibraryPublicationsResources {
 
     @PostMapping()
     public ResponseEntity<Publication> create(@RequestBody Publication publication) {
-return ResponseEntity.ok(publicationService.create(publication));
+        logger.info("creating publication");
+        return ResponseEntity.ok(publicationService.create(publication));
 
     }
 
     @PutMapping()
     public ResponseEntity<Publication> update(@RequestBody Publication publication) {
+        logger.info("updatinging publication");
         return ResponseEntity.ok(publicationService.update(publication));
 
     }
@@ -38,14 +45,15 @@ return ResponseEntity.ok(publicationService.create(publication));
 
     @GetMapping()
     public ResponseEntity<List<Publication>> list() {
-   return   ResponseEntity.ok(publicationService.list());
-
+        logger.info("listing publication");
+        return ResponseEntity.ok(publicationService.list());
 
 
     }
 
     @DeleteMapping()
     public String delete(@PathVariable Long pub) {
+        logger.info("deleting publication");
         publicationService.delete(pub);
         return null;
     }

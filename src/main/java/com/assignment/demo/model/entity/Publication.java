@@ -1,30 +1,27 @@
 package com.assignment.demo.model.entity;
 
-import com.assignment.demo.audit.AuditLibraryKeeping;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "Publ")
-public class Publication extends AuditLibraryKeeping {
+public class Publication {
 
-    public Magazine getMagazine() {
-        return magazine;
-    }
 
-    public void setMagazine(Magazine magazine) {
-        this.magazine = magazine;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "pId")
     private Long pubId;
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     private Magazine magazine;
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     private Book book;
+    @OneToOne(cascade=CascadeType.ALL)
+    private Comics comics;
+    @ManyToMany(cascade=CascadeType.ALL)
+    private List<Author> author = new ArrayList<Author>();
+
     public Book getBook() {
         return book;
     }
@@ -41,10 +38,7 @@ public class Publication extends AuditLibraryKeeping {
         this.comics = comics;
     }
 
-    @OneToOne
-    private Comics comics;
-    @ManyToMany
-    private List<Author> author = new ArrayList<Author>();
+
 
     public Long getPubId() {
         return pubId;
@@ -62,6 +56,12 @@ public class Publication extends AuditLibraryKeeping {
     public void setAuthor(List<Author> author) {
         this.author = author;
     }
+    public Magazine getMagazine() {
+        return magazine;
+    }
 
+    public void setMagazine(Magazine magazine) {
+        this.magazine = magazine;
+    }
 
 }
