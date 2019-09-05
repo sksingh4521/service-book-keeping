@@ -6,12 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "Publication")
+@IdClass(CompositeKey.class)
 public class Publication {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "pId")
-    private Long pubId;
     private String title;
+    @Id
     private Year year;
     @ManyToMany
     public List<Author> getAuthor() {
@@ -27,13 +26,6 @@ public class Publication {
     @ManyToMany(cascade=CascadeType.ALL)
     private List<Author> author = new ArrayList<Author>();
 
-    public Long getPubId() {
-        return pubId;
-    }
-
-    public void setPubId(Long pubId) {
-        this.pubId = pubId;
-    }
 
     public String getTitle() {
         return title;

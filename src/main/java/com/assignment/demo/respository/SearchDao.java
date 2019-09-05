@@ -32,7 +32,7 @@ public class SearchDao  {
     {
         List<SearchParameter> params = new ArrayList<SearchParameter>();
          list.stream().forEach(s ->
-          params.add(new SearchParameter(s.substring(0,s.indexOf(":")), ":", s.substring(s.indexOf(":")))
+          params.add(new SearchParameter(s.substring(0,s.indexOf(":")), ":", s.substring(s.indexOf(":")+1))
           )
   );
         return this.searchPublisher(params);
@@ -40,22 +40,11 @@ public class SearchDao  {
 
     private List<Publication> searchPublisher(List<SearchParameter> params) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-
         CriteriaQuery<Publication> query = builder.createQuery(Publication.class);
-
-//        CriteriaQuery<Book> bookQuery = builder.createQuery(Book.class);
-//        CriteriaQuery<Magazine> magazineQuery = builder.createQuery(Magazine.class);
-//        CriteriaQuery<Comics> comicsQuery = builder.createQuery(Comics.class);
-
-
-
-        Root r = query.from(Publication.class);
-
-//        Root magazineRoot = bookQuery.from(Magazine.class);
-//
-//        Root comicsRoot = bookQuery.from(Comics.class);
-
+         Root r = query.from(Publication.class);
         Predicate predicate = builder.conjunction();
+
+
 
         PublicationSearchQueryCriteriaConsumer searchPublisher =
                 new PublicationSearchQueryCriteriaConsumer(predicate, builder, r);

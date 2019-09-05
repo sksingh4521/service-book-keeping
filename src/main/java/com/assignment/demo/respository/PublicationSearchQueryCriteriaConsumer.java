@@ -1,6 +1,6 @@
 package com.assignment.demo.respository;
 
-import com.assignment.demo.model.entity.Publication;
+
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.Predicate;
@@ -35,7 +35,7 @@ public class PublicationSearchQueryCriteriaConsumer implements Consumer<SearchPa
     @Override
     public void accept(SearchParameter searchParameter) {
        if (searchParameter.getOperation().equalsIgnoreCase(":")) {
-            if (true) {
+            if (r.get(searchParameter.getKey()).getJavaType() == String.class) {
                 predicate = builder.and(predicate, builder.like(
                         r.get(searchParameter.getKey()), "%" + searchParameter.getValue() + "%"));
             } else {
