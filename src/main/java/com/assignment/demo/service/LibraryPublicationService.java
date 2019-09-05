@@ -2,23 +2,21 @@ package com.assignment.demo.service;
 
 import com.assignment.demo.model.entity.Publication;
 import com.assignment.demo.respository.PublicationRepository;
-import com.assignment.demo.respository.SearchDao;
-import com.assignment.demo.respository.SearchParameter;
+import com.assignment.demo.dao.GlobalSearchDao;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.Year;
 import java.util.List;
 
 @Service
 public class LibraryPublicationService {
 
-    private SearchDao searchDao;
+    private GlobalSearchDao globalSearchDao;
 
     private PublicationRepository publicationRepository;
 
-    public LibraryPublicationService(SearchDao searchDao, PublicationRepository publicationRepository) {
-        this.searchDao = searchDao;
+    public LibraryPublicationService(GlobalSearchDao globalSearchDao, PublicationRepository publicationRepository) {
+        this.globalSearchDao = globalSearchDao;
         this.publicationRepository = publicationRepository;
     }
 
@@ -42,6 +40,6 @@ public class LibraryPublicationService {
 
     public List<Publication> getPublicationByGLobalSearch(List<String> list)
     {
-       return searchDao.getPublicationByGLobalSearch(list);
+       return globalSearchDao.getPublicationByGLobalSearch(list);
     }
 }

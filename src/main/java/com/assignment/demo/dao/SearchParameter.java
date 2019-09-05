@@ -1,4 +1,4 @@
-package com.assignment.demo.respository;
+package com.assignment.demo.dao;
 
 import com.assignment.demo.model.entity.Author;
 

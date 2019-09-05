@@ -1,11 +1,13 @@
 package com.assignment.demo.model.entity;
 
+import com.assignment.demo.audit.AuditLibraryKeeping;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Author {
+public class Author extends AuditLibraryKeeping {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,8 +15,6 @@ public class Author {
     private Long Id;
     private String name;
     @ManyToMany
-    @JoinTable(joinColumns = {})
-
     private List<Publication> publicationList = new ArrayList<Publication>();
 
     public List<Publication> getPublicationList() {

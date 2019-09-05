@@ -1,21 +1,23 @@
 package com.assignment.demo.model.entity;
 
+import com.assignment.demo.audit.AuditLibraryKeeping;
+
 import javax.persistence.*;
 import java.time.Year;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity(name = "Publication")
 @IdClass(CompositeKey.class)
-public class Publication {
+public class Publication extends AuditLibraryKeeping {
     @Id
     private String title;
     @Id
     private String year;
-    @ManyToMany
-    public List<Author> getAuthor() {
-        return author;
-    }
+
+
     private String pubName;
     @Enumerated(EnumType.STRING)
     private Magazine magazine;
@@ -24,8 +26,7 @@ public class Publication {
     @OneToOne(cascade=CascadeType.ALL)
     private Comics comics;
     @ManyToMany(cascade=CascadeType.ALL)
-    private List<Author> author = new ArrayList<Author>();
-
+    private Set<Author> author = new HashSet<Author>();
 
     public String getTitle() {
         return title;
@@ -75,7 +76,13 @@ public class Publication {
         this.comics = comics;
     }
 
-    public void setAuthor(List<Author> author) {
+
+    public Set<Author> getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Set<Author> author) {
         this.author = author;
     }
+
 }
