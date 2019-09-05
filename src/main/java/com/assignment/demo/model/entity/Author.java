@@ -1,11 +1,13 @@
 package com.assignment.demo.model.entity;
 
+import com.assignment.demo.audit.AuditLibraryKeeping;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Author {
+public class Author extends AuditLibraryKeeping {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

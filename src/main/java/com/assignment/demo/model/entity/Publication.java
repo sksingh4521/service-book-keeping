@@ -1,5 +1,7 @@
 package com.assignment.demo.model.entity;
 
+import com.assignment.demo.audit.AuditLibraryKeeping;
+
 import javax.persistence.*;
 import java.time.Year;
 import java.util.ArrayList;
@@ -7,7 +9,7 @@ import java.util.List;
 
 @Entity(name = "Publication")
 @IdClass(CompositeKey.class)
-public class Publication {
+public class Publication extends AuditLibraryKeeping {
     @Id
     private String title;
     @Id
