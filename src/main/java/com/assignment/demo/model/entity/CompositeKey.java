@@ -7,7 +7,7 @@ import java.util.Objects;
 public class CompositeKey implements Serializable {
 
     private String title;
-    private Year year;
+    private String year;
 
     @Override
     public boolean equals(Object o) {
@@ -21,5 +21,21 @@ public class CompositeKey implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(title, year);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 }

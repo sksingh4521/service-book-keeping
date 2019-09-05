@@ -11,7 +11,7 @@ public class Publication {
     @Id
     private String title;
     @Id
-    private Year year;
+    private String year;
     @ManyToMany
     public List<Author> getAuthor() {
         return author;
@@ -35,11 +35,11 @@ public class Publication {
         this.title = title;
     }
 
-    public Year getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(Year year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
