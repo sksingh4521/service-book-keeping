@@ -12,6 +12,8 @@ public class Author {
     @Column(name = "authId")
     private Long Id;
     @ManyToMany
+    @JoinTable(joinColumns = {})
+
     private List<Publication> publicationList = new ArrayList<Publication>();
     private String name;
 

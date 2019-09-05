@@ -1,20 +1,55 @@
 package com.assignment.demo.model.entity;
 
 import javax.persistence.*;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "Publ")
+@Entity(name = "Publication")
 public class Publication {
-
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "pId")
     private Long pubId;
-
+    private String title;
+    private Year year;
+    @ManyToMany
+    public List<Author> getAuthor() {
+        return author;
+    }
     private String pubName;
+    @Enumerated(EnumType.STRING)
+    private Magazine magazine;
+    @Enumerated(EnumType.STRING)
+    private Book book;
+    @Embedded
+    private Comics comics;
+    @ManyToMany(cascade=CascadeType.ALL)
+    private List<Author> author = new ArrayList<Author>();
+
+    public Long getPubId() {
+        return pubId;
+    }
+
+    public void setPubId(Long pubId) {
+        this.pubId = pubId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Year getYear() {
+        return year;
+    }
+
+    public void setYear(Year year) {
+        this.year = year;
+    }
 
     public String getPubName() {
         return pubName;
@@ -24,14 +59,13 @@ public class Publication {
         this.pubName = pubName;
     }
 
-    @OneToOne(cascade=CascadeType.ALL)
-    private Magazine magazine;
-    @OneToOne(cascade=CascadeType.ALL)
-    private Book book;
-    @OneToOne(cascade=CascadeType.ALL)
-    private Comics comics;
-    @ManyToMany(cascade=CascadeType.ALL)
-    private List<Author> author = new ArrayList<Author>();
+    public Magazine getMagazine() {
+        return magazine;
+    }
+
+    public void setMagazine(Magazine magazine) {
+        this.magazine = magazine;
+    }
 
     public Book getBook() {
         return book;
@@ -49,30 +83,7 @@ public class Publication {
         this.comics = comics;
     }
 
-
-
-    public Long getPubId() {
-        return pubId;
-    }
-
-    public void setPubId(Long pubId) {
-        this.pubId = pubId;
-    }
-
-    @ManyToMany
-    public List<Author> getAuthor() {
-        return author;
-    }
-
     public void setAuthor(List<Author> author) {
         this.author = author;
     }
-    public Magazine getMagazine() {
-        return magazine;
-    }
-
-    public void setMagazine(Magazine magazine) {
-        this.magazine = magazine;
-    }
-
 }
