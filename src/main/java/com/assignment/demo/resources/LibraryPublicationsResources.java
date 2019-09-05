@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.assignment.demo.resources.UrlConstants.PUBLISHER;
 import static com.assignment.demo.resources.UrlConstants.URI;
@@ -35,6 +36,16 @@ public class LibraryPublicationsResources {
     public ResponseEntity<Publication> create(@RequestBody Publication publication) {
         logger.info("creating publication");
         return ResponseEntity.ok(publicationService.create(publication));
+
+    }
+
+    /*
+    This method is only for testing purpose.
+     */
+    @PostMapping(value = "/multiple")
+    public ResponseEntity<List<Publication>> createMultiple(@RequestBody List<Publication> publicationList) {
+        logger.info("creating publication in bulk");
+      return   ResponseEntity.ok(publicationList.stream().map(r -> publicationService.create(r)).collect(Collectors.toList()));
 
     }
 

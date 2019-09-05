@@ -11,11 +11,11 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "authId")
     private Long Id;
+    private String name;
     @ManyToMany
     @JoinTable(joinColumns = {})
 
     private List<Publication> publicationList = new ArrayList<Publication>();
-    private String name;
 
     public List<Publication> getPublicationList() {
         return publicationList;

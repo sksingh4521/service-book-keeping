@@ -21,7 +21,7 @@ public class Publication {
     private Magazine magazine;
     @Enumerated(EnumType.STRING)
     private Book book;
-    @Embedded
+    @OneToOne(cascade=CascadeType.ALL)
     private Comics comics;
     @ManyToMany(cascade=CascadeType.ALL)
     private List<Author> author = new ArrayList<Author>();

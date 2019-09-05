@@ -6,6 +6,7 @@ import java.time.Year;
 public enum Book {
         Drama,
         Novel,
-        Detective
+        Detective,
+        All
     }
 

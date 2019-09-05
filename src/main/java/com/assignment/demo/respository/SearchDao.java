@@ -15,6 +15,7 @@ import javax.persistence.criteria.Root;
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class SearchDao  {
@@ -30,11 +31,12 @@ public class SearchDao  {
 
     public List<Publication> getPublicationByGLobalSearch(List<String> list)
     {
-        List<SearchParameter> params = new ArrayList<SearchParameter>();
-         list.stream().forEach(s ->
-          params.add(new SearchParameter(s.substring(0,s.indexOf(":")), ":", s.substring(s.indexOf(":")+1))
-          )
-  );
+//        List<SearchParameter> params = new ArrayList<SearchParameter>();
+//         list.stream().forEach(s ->
+//          params.add(new SearchParameter(s.substring(0,s.indexOf(":")), ":", s.substring(s.indexOf(":")+1))
+//          )
+//  );
+        List<SearchParameter> params =  list.stream().map(s->new SearchParameter(s.substring(0,s.indexOf(":")), ":", s.substring(s.indexOf(":")+1))).collect(Collectors.toList());
         return this.searchPublisher(params);
     }
 
@@ -43,6 +45,7 @@ public class SearchDao  {
         CriteriaQuery<Publication> query = builder.createQuery(Publication.class);
          Root r = query.from(Publication.class);
         Predicate predicate = builder.conjunction();
+
 
 
 
