@@ -56,7 +56,7 @@ public class PublicationSearchQueryCriteriaConsumer implements Consumer<SearchPa
     }
 
     private void authorSearch(SearchParameter searchParameter) {
-        Join<Publication, Author> authors = root.join(Publication_.author, JoinType.LEFT);
+        Join<Publication, Author> authors = root.join(Publication_.author);
         authors.on(builder.equal(authors.get("name"), (String) searchParameter.getValue()));
     }
 
