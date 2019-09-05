@@ -10,6 +10,5 @@ public abstract class Publication_ {
     public static volatile SingularAttribute<Publication, Book> book;
     public static volatile SingularAttribute<Publication, Magazine> magazine;
     public static volatile SingularAttribute<Publication, Comics> comics;
-
     public static volatile ListAttribute<Publication, Author> author;
 }

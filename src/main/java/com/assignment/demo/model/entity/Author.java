@@ -13,8 +13,6 @@ public class Author {
     private Long Id;
     private String name;
     @ManyToMany
-    @JoinTable(joinColumns = {})
-
     private List<Publication> publicationList = new ArrayList<Publication>();
 
     public List<Publication> getPublicationList() {
