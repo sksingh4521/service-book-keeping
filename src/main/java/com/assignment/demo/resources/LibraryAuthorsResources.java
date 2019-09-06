@@ -1,6 +1,6 @@
 package com.assignment.demo.resources;
 
-import com.assignment.demo.model.entity.Author;
+import com.assignment.demo.entity.Author;
 import com.assignment.demo.service.LibraryAuthorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

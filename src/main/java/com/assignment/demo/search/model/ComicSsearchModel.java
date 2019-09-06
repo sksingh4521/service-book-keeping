@@ -1,8 +1,8 @@
 package com.assignment.demo.search.model;
 
-import com.assignment.demo.model.entity.Comics;
-import com.assignment.demo.model.entity.Publication;
-import com.assignment.demo.model.entity.Publication_;
+import com.assignment.demo.entity.Comics;
+import com.assignment.demo.entity.Publication;
+import com.assignment.demo.entity.Publication_;
 import com.assignment.demo.search.SearchParameter;
 
 import javax.persistence.criteria.CriteriaBuilder;

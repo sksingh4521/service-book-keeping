@@ -1,4 +1,4 @@
-package com.assignment.demo.model.entity;
+package com.assignment.demo.entity;
 
 import javax.persistence.metamodel.SetAttribute;
 import javax.persistence.metamodel.SingularAttribute;

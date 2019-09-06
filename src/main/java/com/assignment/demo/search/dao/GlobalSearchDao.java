@@ -1,6 +1,6 @@
 package com.assignment.demo.search.dao;
 
-import com.assignment.demo.model.entity.Publication;
+import com.assignment.demo.entity.Publication;
 import com.assignment.demo.search.PublicationSearchQueryCriteriaConsumer;
 import com.assignment.demo.search.SearchParameter;
 import org.springframework.stereotype.Repository;

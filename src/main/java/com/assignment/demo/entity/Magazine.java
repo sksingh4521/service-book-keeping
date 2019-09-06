@@ -1,4 +1,4 @@
-package com.assignment.demo.model.entity;
+package com.assignment.demo.entity;
 
 public enum Magazine {
     Printed, Online, All;

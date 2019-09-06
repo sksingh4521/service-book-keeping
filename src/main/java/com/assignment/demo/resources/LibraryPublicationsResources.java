@@ -1,7 +1,7 @@
 package com.assignment.demo.resources;
 
 
-import com.assignment.demo.model.entity.Publication;
+import com.assignment.demo.entity.Publication;
 import com.assignment.demo.service.LibraryPublicationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

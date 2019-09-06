@@ -1,4 +1,4 @@
-package com.assignment.demo.model.entity;
+package com.assignment.demo.entity;
 
 import com.assignment.demo.audit.AuditLibraryKeeping;
 
@@ -72,7 +72,6 @@ public class Publication extends AuditLibraryKeeping {
     public void setComics(Comics comics) {
         this.comics = comics;
     }
-
 
     public Set<Author> getAuthor() {
         return author;

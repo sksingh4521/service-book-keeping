@@ -1,7 +1,7 @@
 package com.assignment.demo.service;
 
 import com.assignment.demo.search.dao.GlobalSearchDao;
-import com.assignment.demo.model.entity.Publication;
+import com.assignment.demo.entity.Publication;
 import com.assignment.demo.respository.PublicationRepository;
 import org.springframework.stereotype.Service;
 

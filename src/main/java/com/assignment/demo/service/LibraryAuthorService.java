@@ -1,6 +1,6 @@
 package com.assignment.demo.service;
 
-import com.assignment.demo.model.entity.Author;
+import com.assignment.demo.entity.Author;
 import com.assignment.demo.respository.AuthorRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,14 +10,10 @@ import java.util.List;
 public class LibraryAuthorService {
 
     private AuthorRepository authorRepository;
-
-
     public LibraryAuthorService(AuthorRepository authorRepository) {
         this.authorRepository = authorRepository;
     }
-
     public void delete(String authorName) {
-
         authorRepository.deleteByName(authorName);
     }
 

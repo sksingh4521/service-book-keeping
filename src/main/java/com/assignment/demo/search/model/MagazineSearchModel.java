@@ -1,7 +1,7 @@
 package com.assignment.demo.search.model;
 
-import com.assignment.demo.model.entity.Magazine;
-import com.assignment.demo.model.entity.Publication_;
+import com.assignment.demo.entity.Magazine;
+import com.assignment.demo.entity.Publication_;
 import com.assignment.demo.search.SearchParameter;
 
 import javax.persistence.criteria.CriteriaBuilder;
