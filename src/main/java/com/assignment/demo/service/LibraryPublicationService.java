@@ -1,8 +1,8 @@
 package com.assignment.demo.service;
 
+import com.assignment.demo.search.dao.GlobalSearchDao;
 import com.assignment.demo.model.entity.Publication;
 import com.assignment.demo.respository.PublicationRepository;
-import com.assignment.demo.dao.GlobalSearchDao;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -38,8 +38,7 @@ public class LibraryPublicationService {
     }
 
 
-    public List<Publication> getPublicationByGLobalSearch(List<String> list)
-    {
-       return globalSearchDao.getPublicationByGLobalSearch(list);
+    public List<Publication> getPublicationByGLobalSearch(List<String> list) {
+        return globalSearchDao.getPublicationByGLobalSearch(list);
     }
 }

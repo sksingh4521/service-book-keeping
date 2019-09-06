@@ -1,6 +1,8 @@
 package com.assignment.demo.model.entity;
 
-import javax.persistence.metamodel.*;
+import javax.persistence.metamodel.SetAttribute;
+import javax.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.StaticMetamodel;
 
 
 @StaticMetamodel(Publication.class)

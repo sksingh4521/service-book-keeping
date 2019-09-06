@@ -43,7 +43,7 @@ public class LibraryPublicationsResources {
     @PostMapping(value = "/multiple")
     public ResponseEntity<List<Publication>> createMultiple(@RequestBody List<Publication> publicationList) {
         logger.info("creating publication in bulk");
-      return   ResponseEntity.ok(publicationList.stream().map(r -> publicationService.create(r)).collect(Collectors.toList()));
+        return ResponseEntity.ok(publicationList.stream().map(r -> publicationService.create(r)).collect(Collectors.toList()));
 
     }
 
@@ -80,7 +80,6 @@ public class LibraryPublicationsResources {
         return ResponseEntity.ok(publicationService.getPublicationByGLobalSearch(list));
 
     }
-
 
 
 }

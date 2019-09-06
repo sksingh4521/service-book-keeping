@@ -16,8 +16,8 @@ import static com.assignment.demo.resources.UrlConstants.URI;
 @RequestMapping(URI + AUTHOR)
 public class LibraryAuthorsResources {
 
-    private LibraryAuthorService libraryAuthorService;
     private static final Logger logger = LoggerFactory.getLogger(LibraryAuthorsResources.class);
+    private LibraryAuthorService libraryAuthorService;
 
     public LibraryAuthorsResources(LibraryAuthorService libraryAuthorService) {
         this.libraryAuthorService = libraryAuthorService;

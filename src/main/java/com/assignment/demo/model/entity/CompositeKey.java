@@ -1,7 +1,6 @@
 package com.assignment.demo.model.entity;
 
 import java.io.Serializable;
-import java.time.Year;
 import java.util.Objects;
 
 public class CompositeKey implements Serializable {

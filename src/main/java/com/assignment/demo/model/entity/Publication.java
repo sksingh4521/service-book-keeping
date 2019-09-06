@@ -3,10 +3,7 @@ package com.assignment.demo.model.entity;
 import com.assignment.demo.audit.AuditLibraryKeeping;
 
 import javax.persistence.*;
-import java.time.Year;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity(name = "Publication")
@@ -23,9 +20,9 @@ public class Publication extends AuditLibraryKeeping {
     private Magazine magazine;
     @Enumerated(EnumType.STRING)
     private Book book;
-    @OneToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private Comics comics;
-    @ManyToMany(cascade=CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     private Set<Author> author = new HashSet<Author>();
 
     public String getTitle() {

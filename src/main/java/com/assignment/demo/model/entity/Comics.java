@@ -1,7 +1,6 @@
 package com.assignment.demo.model.entity;
 
 import javax.persistence.*;
-import java.time.Year;
 
 @Entity
 public class Comics {

@@ -1,6 +1,8 @@
-package com.assignment.demo.dao;
+package com.assignment.demo.search.dao;
 
 import com.assignment.demo.model.entity.Publication;
+import com.assignment.demo.search.PublicationSearchQueryCriteriaConsumer;
+import com.assignment.demo.search.SearchParameter;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -24,18 +26,17 @@ public class GlobalSearchDao {
         this.entityManager = entityManager;
     }
 
-    public List<Publication> getPublicationByGLobalSearch(List<String> list)
-    {
-        List<SearchParameter> params =  list.stream().map(s->new SearchParameter(s.substring(0,s.indexOf(":")), ":", s.substring(s.indexOf(":")+1))).collect(Collectors.toList());
+    public List<Publication> getPublicationByGLobalSearch(List<String> list) {
+        List<SearchParameter> params = list.stream().map(s -> new SearchParameter(s.substring(0, s.indexOf(":")), ":", s.substring(s.indexOf(":") + 1))).collect(Collectors.toList());
         return this.searchPublisher(params);
     }
 
     private List<Publication> searchPublisher(List<SearchParameter> params) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Publication> query = builder.createQuery(Publication.class);
-         Root r = query.from(Publication.class);
+        Root r = query.from(Publication.class);
         Predicate predicate = builder.conjunction();
-         PublicationSearchQueryCriteriaConsumer searchPublisher =
+        PublicationSearchQueryCriteriaConsumer searchPublisher =
                 new PublicationSearchQueryCriteriaConsumer(predicate, builder, r);
         params.stream().forEach(searchPublisher);
         predicate = searchPublisher.getPredicate();
