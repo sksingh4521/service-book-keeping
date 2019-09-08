@@ -5,14 +5,6 @@ import java.util.HashMap;
 public class SearchDictionary {
     private static HashMap modelMap = new HashMap<>();
 
-    public static HashMap getModelMap() {
-        return modelMap;
-    }
-
-    private SearchDictionary() {
-
-    }
-
     static {
         modelMap.put("book", new BookSearchModel());
         modelMap.put("magazine", new MagazineSearchModel());
@@ -22,8 +14,13 @@ public class SearchDictionary {
         modelMap.put("year", new SimpleSearchModel());
     }
 
+    private SearchDictionary() {
 
+    }
 
+    public static HashMap getModelMap() {
+        return modelMap;
+    }
 
 
 }

@@ -10,9 +10,11 @@ import java.util.List;
 public class LibraryAuthorService {
 
     private AuthorRepository authorRepository;
+
     public LibraryAuthorService(AuthorRepository authorRepository) {
         this.authorRepository = authorRepository;
     }
+
     public void delete(String authorName) {
         authorRepository.deleteByName(authorName);
     }
