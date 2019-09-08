@@ -36,7 +36,7 @@ Magazine
 	o Example: find all novels by Stephen King
 	o Example: find all comics with Spider-man
 
-	 Technical Requirements
+Technical Requirements
 • Any framework, ORM and library may be used 
 • Relational database must be used to persist data
 • No security required 
@@ -45,7 +45,7 @@ Magazine
 
 
 ---
-Solution:
+<b>Solution:</b>
 
 Step 1: Checkout project and build it through gradle
 Step 2: Server should run at 8080 with h2 in memory database.
@@ -55,7 +55,7 @@ Step 5: execute createBulkPublisher from postman, it would create test data to v
 Ste 6 : Validate all the cases through other postman request in json.
 
 ---
-How this solution is extensible:
+<b>How this solution is extended ?</b>
 We need to follow below standard step if new Publication needs to be added:
 1. Add new Publication as Entity
 2. Create appropiate composition(due to has-a relationship) and mapping as per requirement in Publication.java (Book,Comics, Authors are good existing example).
